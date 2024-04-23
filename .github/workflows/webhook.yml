@@ -6,12 +6,16 @@ on:
     types: 
       - completed
 
+permissions:
+    contents: read
+    packages: write
+
 jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
     - name: Webhook
-      uses: distributhor/workflow-webhook
+      uses: zzzze/webhook-trigger@master
       with:
-        url: "http://amberisgreat.ngrok.io/api/test_pedant"
-        json: '{}'
+        data: "{\"event_type\":\"build\"}"
+        webhook_url: ${{ secrets.WEBHOOK_URL }}
