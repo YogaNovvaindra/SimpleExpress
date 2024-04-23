@@ -4,7 +4,10 @@ services:
   app:
     container_name: simpleexpress
     image: ghcr.io/yoganovvaindra/simpleexpress:latest # Replace placeholders with your details
+    network_mode: bridge
     ports:
       - "3000:3000"
     restart: unless-stopped
+
+
 
