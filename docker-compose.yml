@@ -6,4 +6,5 @@ services:
     image: ghcr.io/yoganovvaindra/simpleexpress:latest # Replace placeholders with your details
     ports:
       - "3000:3000"
+    restart: unless-stopped
 
