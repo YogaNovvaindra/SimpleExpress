@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: simpleexpress
+    image: ghcr.io/yoganovvaindra/simpleexpress:latest # Replace placeholders with your details
+    ports:
+      - "3000:3000"
+
