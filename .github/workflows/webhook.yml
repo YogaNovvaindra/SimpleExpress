@@ -1,0 +1,17 @@
+name: Webhook
+
+on:
+  workflow_run:
+    workflows: ["Docker Builder"]
+    types: 
+      - completed
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Webhook
+      uses: distributhor/workflow-webhook
+      with:
+        url: "http://amberisgreat.ngrok.io/api/test_pedant"
+        json: '{}'
